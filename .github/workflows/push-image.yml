@@ -24,7 +24,7 @@ jobs:
         with:
           images: danggro/multi-container-deploy-test-backend
 
-      - name: Build and push Docker image
+      - name: Build and push Docker Image Backend
         uses: docker/build-push-action@v5
         with:
           context: ./backend/
@@ -38,10 +38,16 @@ jobs:
         with:
           images: danggro/multi-container-deploy-test-frontend
 
-      - name: Build and push Docker image
+      - name: Build and push Docker Image Frontend
         uses: docker/build-push-action@v5
         with:
           context: ./frontend/
           push: true
           tags: ${{ steps.frontend.outputs.tags }}
           labels: ${{ steps.frontend.outputs.labels }}
+
+      - name: Build and push Docker Image Nginx
+        uses: docker/build-push-action@v5
+        with:
+          context: ./nginx/
+          push: true
