@@ -46,8 +46,8 @@ jobs:
           tags: ${{ steps.frontend.outputs.tags }}
           labels: ${{ steps.frontend.outputs.labels }}
 
-      - name: Build and push Docker Image Nginx
-        uses: docker/build-push-action@v5
-        with:
-          context: ./nginx/
-          push: true
+      # - name: Build and push Docker Image Nginx
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     context: ./nginx/
+      #     push: true
