@@ -1,0 +1,12 @@
+services:
+  multi-container-deploy-frontend:
+    image: multi-container-deploy-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 8080:8080
+    container_name: multi-container-deploy-frontend
