@@ -45,7 +45,7 @@ jobs:
         with:
           images: danggro/multi-container-deploy-test-backend
           flavor: |
-            latest=auto
+            latest=true
           tags: |
             type=semver,pattern={{version}}
             type=ref,event=tag

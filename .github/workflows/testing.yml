@@ -1,0 +1,33 @@
+name: Publish Docker image
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [synchronize]
+    tags: [v*]
+
+jobs:
+  versioning&get:
+    name: Versioning
+    # needs: [push_to_registry]
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get tag before versioning
+        run: echo ${GITHUB_REF}
+
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.64.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: "#patch"
+          REPO_OWNER: danggro
+
+      - name: Get tag after versioning
+        run: echo ${GITHUB_REF}
