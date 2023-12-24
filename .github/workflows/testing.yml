@@ -1,4 +1,4 @@
-name: Publish Docker image
+name: Testing
 
 on:
   push:
@@ -9,9 +9,8 @@ on:
     tags: [v*]
 
 jobs:
-  versioning&get:
+  versioning_get:
     name: Versioning
-    # needs: [push_to_registry]
     runs-on: ubuntu-20.04
     permissions:
       contents: write
