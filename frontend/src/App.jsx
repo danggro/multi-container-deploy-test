@@ -50,8 +50,7 @@ function App() {
 
   return (
     <>
-      <h1>Add name update_5</h1>
-      <h2>Something new</h2>
+      <h1>Add name update_6</h1>
       <form onSubmit={onSubmit}>
         <label htmlFor="#name">Name :</label>
         <input type="text" id="name" name="name" />
