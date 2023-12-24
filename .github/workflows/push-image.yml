@@ -3,6 +3,7 @@ name: Publish Docker image
 on:
   push:
     branches: [main]
+    tags: [v*]
   pull_request:
     branches: [main]
     types: [synchronize]
@@ -80,5 +81,6 @@ jobs:
         uses: anothrNick/github-tag-action@1.64.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
           DEFAULT_BUMP: patch
           REPO_OWNER: danggro
