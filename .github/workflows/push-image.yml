@@ -22,11 +22,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
-          DEFAULT_BUMP: patch
+          DEFAULT_BUMP: "#patch"
           REPO_OWNER: danggro
 
   push_to_registry:
     name: Push Docker image to Docker Hub
+    needs: [tag-release]
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
