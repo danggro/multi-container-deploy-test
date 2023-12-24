@@ -1,63 +1,53 @@
 services:
-  multi-container-deploy-frontend:
-    image: multi-container-deploy-frontend
-    container_name: multi-container-deploy-frontend
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-      network: host
-
   postgres_db:
-    image: postgres
+    image: docker.io/library/postgres
     container_name: postgres_db
     environment:
       POSTGRES_DB: test
       POSTGRES_PASSWORD: secret
       PGDATA: /var/lib/postgresql/data/pgdata
+      PGUSER: "postgres"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     volumes:
       - pg_volume:/var/lib/postgresql/data
 
   redis_db:
-    image: redis
+    image: docker.io/library/redis
     container_name: redis_db
     command: ["redis-server", "--appendonly", "yes"]
     volumes:
       - redis_volume:/data
 
-  nginx:
-    image: mcdt-nginx
-    # image: nginx:1.20.1
-    # volumes:
-    #   - ./nginx.conf:/etc/nginx/nginx.conf:ro
-    ports:
-      - 8080:80
-    container_name: reverse-proxy
-    depends_on:
-      - multi-container-deploy-frontend
-      - multi-container-deploy-backend
-
   multi-container-deploy-backend:
     image: multi-container-deploy-backend
     container_name: multi-container-deploy-backend
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-      network: host
     environment:
       POSTGRES_DB: postgres://postgres:secret@postgres_db:5432/test
       REDIS_DB: redis://redis_db:6379
-      NODE_ENV: test
     depends_on:
-      - postgres_db
-      - redis_db
+      postgres_db:
+        condition: service_healthy
+      redis_db:
+        condition: service_started
 
-  watchtower:
-    image: docker.io/containrrr/watchtower
-    container_name: watchtower
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      # - /root/.docker/config.json:/config.json
-    command: --interval 30
+  multi-container-deploy-frontend:
+    image: multi-container-deploy-frontend
+    container_name: multi-container-deploy-frontend
+
+  nginx:
+    image: mcdt-nginx
+    ports:
+      - 80:80
+    container_name: reverse-proxy
+    depends_on:
+      multi-container-deploy-frontend:
+        condition: service_started
+      multi-container-deploy-backend:
+        condition: service_started
 
 volumes:
   pg_volume:

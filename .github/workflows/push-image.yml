@@ -26,6 +26,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: danggro/multi-container-deploy-test-backend
+          tags: |
+            type=semver,pattern={{version}}
 
       - name: Build and push Docker Image Backend
         uses: docker/build-push-action@v5
@@ -49,11 +51,21 @@ jobs:
           tags: ${{ steps.frontend.outputs.tags }}
           labels: ${{ steps.frontend.outputs.labels }}
 
-  # - name: Build and push Docker Image Nginx
-  #   uses: docker/build-push-action@v5
-  #   with:
-  #     context: ./nginx/
-  #     push: true
+      - name: Extract metadata (tags, labels) Nginx
+        id: nginx
+        uses: docker/metadata-action@v5
+        with:
+          images: danggro/mcdt-nginx
+          tags: |
+            type=ref,event=tag
+
+      - name: Build and push Docker Image Nginx
+        uses: docker/build-push-action@v5
+        with:
+          context: ./nginx/
+          push: true
+          tags: ${{ steps.nginx.outputs.tags }}
+          labels: ${{ steps.nginx.outputs.labels }}
 
   tag-release:
     name: Versioning
