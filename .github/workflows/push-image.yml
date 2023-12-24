@@ -9,6 +9,22 @@ on:
     types: [synchronize]
 
 jobs:
+  tag-release:
+    name: Versioning
+    # needs: [push_to_registry]
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.64.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: patch
+          REPO_OWNER: danggro
+
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
@@ -67,20 +83,3 @@ jobs:
           push: true
           tags: ${{ steps.nginx.outputs.tags }}
           labels: ${{ steps.nginx.outputs.labels }}
-
-  tag-release:
-    name: Versioning
-    needs: [push_to_registry]
-    runs-on: ubuntu-20.04
-    permissions:
-      contents: write
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.64.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: true
-          DEFAULT_BUMP: patch
-          REPO_OWNER: danggro
