@@ -31,4 +31,4 @@ jobs:
 
       - name: Get tag after versioning
         run: |
-          echo ${github}
+          echo ${{ toJson(github) }}
