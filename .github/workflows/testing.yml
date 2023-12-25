@@ -20,7 +20,6 @@ jobs:
       - name: Get tag before versioning
         run: |
           echo ${GITHUB_REF}
-          echo ${github.ref_name}
           echo ${github}
 
       - name: Bump version and push tag
@@ -34,4 +33,3 @@ jobs:
       - name: Get tag after versioning
         run: |
           echo ${GITHUB_REF}
-          echo ${github.ref_name}
