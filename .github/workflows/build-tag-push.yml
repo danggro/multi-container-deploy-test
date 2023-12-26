@@ -1,0 +1,46 @@
+name: Build, Tag, & Push Image
+
+on:
+  pull_request:
+    branches: [main]
+    types: [synchronize]
+
+jobs:
+  push_to_registry:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build MCDT Frontend Image
+        run: docker build ./frontend -t danggro/multi-container-deploy-test-frontend:latest
+
+      - name: Build MCDT Backend Image
+        run: docker build ./backend -t danggro/multi-container-deploy-test-backend:latest
+
+      - name: Build MCDT Nginx Image
+        run: docker build ./mcdt-nginx -t danggro/mcdt-nginx:latest
+
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.64.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: "#patch"
+          REPO_OWNER: danggro
+
+      - name: Push MCDT Frontend Image
+        run: docker push danggro/multi-container-deploy-test-frontend:latest
+
+      - name: Push MCDT Backend Image
+        run: docker push danggro/multi-container-deploy-test-backend:latest
+
+      - name: Push MCDT Nginx Image
+        run: docker push danggro/mcdt-nginx:latest
