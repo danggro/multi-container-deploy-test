@@ -28,7 +28,7 @@ jobs:
         run: docker build ./backend -t danggro/multi-container-deploy-test-backend:latest
 
       - name: Build MCDT Nginx Image
-        run: docker build ./mcdt-nginx -t danggro/mcdt-nginx:latest
+        run: docker build ./nginx -t danggro/mcdt-nginx:latest
 
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.64.0
