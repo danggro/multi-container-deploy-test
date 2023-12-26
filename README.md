@@ -130,13 +130,13 @@ Delete specific note with click 3 dot on the right top of the page and then clic
 
 ### PRD ( Product Requirements Document )
 
-- link
+- [PRD](https://github.com/danggro/multi-container-deploy-test/blob/main/documents/PRD/PRD.pdf)
 
 ### Technical Design
 
-- Deployment Diagram (link)
-- ERD ( Entity Relationships Diagram ) (link)
+- [Deployment Diagram](https://github.com/danggro/multi-container-deploy-test/blob/main/documents/Technical%20Design/Deployment%20Diagram/deployment_diagram.jpg)
+- [ERD ( Entity Relationships Diagram )](https://github.com/danggro/multi-container-deploy-test/blob/main/documents/Technical%20Design/ERD/ERD%20Diagram.jpg)
 
 ### API Specification
 
-- link
+- [API Specification](https://github.com/danggro/multi-container-deploy-test/tree/main/documents/API%20Specification)
