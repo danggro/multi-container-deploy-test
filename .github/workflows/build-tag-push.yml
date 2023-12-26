@@ -1,6 +1,8 @@
 name: Build, Tag, & Push Image
 
 on:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
     types: [synchronize]
