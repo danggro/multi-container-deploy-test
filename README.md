@@ -6,8 +6,8 @@ A note taking application with CRUD, authentication & authorization features.
   <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/login-page.png" width="800" height="450">
 <p align="center"><strong>Signup page</strong>. Design from <a href="https://codedesign.dev" target='_blank'>codedesign.dev</a></p>
   <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/signup-page.png" width="800" height="450">
-<p align="center"><strong>Main page</strong>. Design from <a href="https://codedesign.dev" target='_blank'>codedesign.dev</a></p>
-  <img align="center" src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/main-page.png" width="800" height="450">
+<p align="center"><strong>Main page</strong>. Design from <a href="https://codedesign.dev" target='_blank'>codedesign.dev</a>
+  <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/main-page.png" width="800" height="450"></p>
 
 ## Table of Contents
 
