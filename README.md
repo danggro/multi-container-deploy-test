@@ -3,11 +3,11 @@
 A note taking application with CRUD, authentication & authorization features.
 
   <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/login-page.png">
-<p align="center">Login page. Design from</p>
+<span align="center">Login page. Design from</span>
   <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/signup-page.png">
-<p align="center">SIgnup page. Design from <a href="www.codedesign.dev">codedesign.dev</a></p>
+<span align="center">SIgnup page. Design from <a href="https://codedesign.dev">codedesign.dev</a></span>
   <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/main-page.png">
-<p align="center">Main page. Design from <a href="www.codedesign.dev">codedesign.dev</a></p>
+<span align="center">Main page. Design from <a href="https://codedesign.dev">codedesign.dev</a></span>
 
 ## Table of Contents
 
