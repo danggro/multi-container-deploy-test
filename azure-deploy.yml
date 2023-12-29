@@ -1,20 +1,4 @@
 services:
-  postgres_db:
-    image: docker.io/library/postgres
-    container_name: postgres_db
-    environment:
-      POSTGRES_DB: test
-      POSTGRES_PASSWORD: secret
-      PGDATA: /var/lib/postgresql/data/pgdata
-      PGUSER: "postgres"
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-    volumes:
-      - postgres_mcdt:/var/lib/postgresql/data
-
   redis_db:
     image: docker.io/library/redis
     container_name: redis_db
@@ -26,7 +10,7 @@ services:
     image: docker.io/danggro/multi-container-deploy-test-backend:latest
     container_name: multi-container-deploy-backend
     environment:
-      POSTGRES_DB: postgres://postgres:secret@postgres_db:5432/test
+      POSTGRES_DB: postgres://postgres:Danggro@120300@mcdt.postgres.database.azure.com:5432/test
       REDIS_DB: redis://redis_db:6379
     depends_on:
       postgres_db:
@@ -53,9 +37,4 @@ services:
         condition: service_started
 
 volumes:
-  postgres_mcdt:
-    driver: azure_file
-    driver_opts:
-      share_name: postgresmcdt
-      storage_account_name: postgresmcdt
   redis_volume:
