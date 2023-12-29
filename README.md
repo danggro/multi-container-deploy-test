@@ -2,9 +2,12 @@
 
 A note taking application with CRUD, authentication & authorization features.
 
-<!-- [Watch Demo](https://youtu.be/Tmncayg7FeU)
-
-![UI-community](https://raw.githubusercontent.com/nz-m/SocialEcho/main/resources/UI-community.png) -->
+- Login page. Design from
+  <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/login-page.png">
+- Signup page. Design from
+  <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/signup-page.png">
+- Main page. Design from [codedesign.dev](codedesign.dev)
+  <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/main-page.png">
 
 ## Table of Contents
 
@@ -125,6 +128,10 @@ After specific note is show up it can be changed by click input, change the valu
 #### Delete Note
 
 Delete specific note with click 3 dot on the right top of the page and then click delete.
+
+## Deployments
+
+For deploying my application, I use Azure App Service, which allows for straightforward execution of Docker Compose by writing or simply copying the `docker-compose.yml` file from the application to Azure. Then, activate Continous Deployment, for `Azure Container Registry` can be activated directly, but for other registries like `Docker Hub`, it have to manually add Webhook URL to image repository on Docker Hub.
 
 ## Documents
 
