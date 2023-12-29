@@ -2,15 +2,15 @@
 
 A note taking application with CRUD, authentication & authorization features.
 
-<p align="center"><strong>Login page</strong>. Design from
+<p align="center"><strong>Login page</strong>. Design from <a href="https://https://www.figma.com/community/file/1254024318818305187/login-pages-v1-carey">Figma</a>
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/login-page.png" width="640" height="360"></p>
-<p align="center"><strong>Signup page</strong>. Design from <a href="https://codedesign.dev" target='_blank'>codedesign.dev</a>
+<p align="center"><strong>Signup page</strong>. Design from <a href="https://https://www.figma.com/community/file/1254024318818305187/login-pages-v1-carey">Figma</a>
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/signup-page.png" width="640" height="360"></p>
-<p align="center"><strong>Main page</strong>. Design from <a href="https://codedesign.dev" target='_blank'>codedesign.dev</a>
+<p align="center"><strong>Main page</strong>. Design from <a href="https://codedesign.dev/challenge/nowted-app">codedesign.dev</a>
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/main-page.png" width="640" height="360"></p>
@@ -93,7 +93,7 @@ cd ./backend
 npm install
 ```
 
-> **Note** In development there must intall the dependencies cause docker container attached with volumes in folder frontend & backend
+> **Note:** In development environment must intall the dependencies because docker container attached with volumes in folder frontend & backend
 
 ```bash
 docker compose -f docker-compose.dev.yml build
