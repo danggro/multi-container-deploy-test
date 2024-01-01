@@ -27,7 +27,7 @@ services:
     container_name: multi-container-deploy-backend
     environment:
       # POSTGRES_DB: postgres://postgres:secret@postgres_db:5432/test
-      POSTGRES_DB: postgres://postgres:Danggro@120300@mcdt.postgres.database.azure.com:5432/test
+      POSTGRES_DB: postgres://postgres:Danggro@120300@danggrodb.postgres.database.azure.com:5432/test
       REDIS_DB: redis://redis_db:6379
     depends_on:
       # postgres_db:

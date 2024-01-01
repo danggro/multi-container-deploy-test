@@ -2,18 +2,21 @@
 
 A note taking application with CRUD, authentication & authorization features.
 
-<p align="center"><strong>Login page</strong>. Design from <a href="https://https://www.figma.com/community/file/1254024318818305187/login-pages-v1-carey">Figma</a>
+<p align="center"><strong>Login page</strong>. Design from <a href="https://www.figma.com/community/file/1254024318818305187/login-pages-v1-carey">Figma</a> ( Daniel Carey )
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/login-page.png" width="640" height="360"></p>
-<p align="center"><strong>Signup page</strong>. Design from <a href="https://https://www.figma.com/community/file/1254024318818305187/login-pages-v1-carey">Figma</a>
+  <img src="https://raw.githubusercontent.com/danggro/nowted/main/document/images/login-page.png" width="640" height="360">
+</p>
+<p align="center"><strong>Signup page</strong>. Design from <a href="https://www.figma.com/community/file/1254024318818305187/login-pages-v1-carey">Figma</a> ( Daniel Carey )
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/signup-page.png" width="640" height="360"></p>
+  <img src="https://raw.githubusercontent.com/danggro/nowted/main/document/images/signup-page.png" width="640" height="360">
+</p>
 <p align="center"><strong>Main page</strong>. Design from <a href="https://codedesign.dev/challenge/nowted-app">codedesign.dev</a>
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/danggro/multi-container-deploy-test/main/images/main-page.png" width="640" height="360"></p>
+  <img src="https://raw.githubusercontent.com/danggro/nowted/main/document/images/main-page.png" width="640" height="360">
+</p>
 
 ## Table of Contents
 
@@ -22,7 +25,7 @@ A note taking application with CRUD, authentication & authorization features.
 - [Technologies](#technologies)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [Documents](#documents)
+- [document](#document)
 
 ## Project Overview
 
@@ -139,17 +142,17 @@ Delete specific note with click 3 dot on the right top of the page and then clic
 
 For deploying my application, I use Azure App Service, which allows for straightforward execution of Docker Compose by writing or simply copying the `docker-compose.yml` file from the application to Azure. Then, activate Continous Deployment, for `Azure Container Registry` can be activated directly, but for other registries like `Docker Hub`, it have to manually add Webhook URL to image repository on Docker Hub.
 
-## Documents
+## document
 
 ### PRD ( Product Requirements Document )
 
-- [PRD](https://github.com/danggro/multi-container-deploy-test/blob/main/documents/PRD/PRD.pdf)
+- [PRD](https://github.com/danggro/nowted/blob/main/document/PRD/PRD.pdf)
 
 ### Technical Design
 
-- [Deployment Diagram](https://github.com/danggro/multi-container-deploy-test/blob/main/documents/Technical%20Design/Deployment%20Diagram/deployment_diagram.jpg)
-- [ERD ( Entity Relationships Diagram )](https://github.com/danggro/multi-container-deploy-test/blob/main/documents/Technical%20Design/ERD/ERD%20Diagram.jpg)
+- [Deployment Diagram](https://github.com/danggro/nowted/blob/main/document/Technical%20Design/Deployment%20Diagram/deployment_diagram.jpg)
+- [ERD ( Entity Relationships Diagram )](https://github.com/danggro/nowted/blob/main/document/Technical%20Design/ERD/ERD%20Diagram.jpg)
 
 ### API Specification
 
-- [API Specification](https://github.com/danggro/multi-container-deploy-test/tree/main/documents/API%20Specification)
+- [API Specification](https://github.com/danggro/nowted/tree/main/document/API%20Specification)
