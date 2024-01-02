@@ -37,16 +37,16 @@ jobs:
       # - name: Build MCDT Nginx Image
       #   run: docker build ./nginx -t danggro/mcdt-nginx:latest
 
-      - name: "Automated Version Bump"
-        uses: "phips28/gh-action-bump-version@master"
-        id: bumb
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACKAGEJSON_DIR: "frontend"
-        with:
-          skip-tag: "true"
-          skip-commit: "true"
-          skip-push: "true"
+      # - name: "Automated Version Bump"
+      #   uses: "phips28/gh-action-bump-version@master"
+      #   id: bumb
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     PACKAGEJSON_DIR: "frontend"
+      #   with:
+      #     skip-tag: "true"
+      #     skip-commit: "true"
+      #     skip-push: "true"
 
       - name: bump npm version
         env:
