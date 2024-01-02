@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1](https://github.com/danggro/multi-container-deploy-test/compare/v0.1.15...v0.0.1) (2024-01-02)
+
+
+### Bug Fixes
+
+* **test-2:** edit just test (4) ([c17dead](https://github.com/danggro/multi-container-deploy-test/commit/c17deade9d91005943641c2ea5181ab834892ada))
+* **test-2:** edit just test-2 (4) ([02131b9](https://github.com/danggro/multi-container-deploy-test/commit/02131b90b447b362403ac8ec7c0555f97d4a70ea))
+* **test:** edit test-2(5) ([a85e4c5](https://github.com/danggro/multi-container-deploy-test/commit/a85e4c5a6629eb30010b47ca8e3012662fe91c67))
+* **test:** edit test(5) ([fd2391b](https://github.com/danggro/multi-container-deploy-test/commit/fd2391b27d9e15149f6e197480b3656905b263a3))
+
+### [0.0.1](https://github.com/danggro/multi-container-deploy-test/compare/v0.1.15...v0.0.1) (2024-01-02)
+
+
+### Bug Fixes
+
+* **test-2:** edit just test (4) ([c17dead](https://github.com/danggro/multi-container-deploy-test/commit/c17deade9d91005943641c2ea5181ab834892ada))
+* **test-2:** edit just test-2 (4) ([02131b9](https://github.com/danggro/multi-container-deploy-test/commit/02131b90b447b362403ac8ec7c0555f97d4a70ea))
+* **test:** edit just test (5) ([bfb66de](https://github.com/danggro/multi-container-deploy-test/commit/bfb66de1cf4d388da31fb2a8d8fa84b58b9065f2))
+* **test:** edit just test-2 (5) ([86a3a7d](https://github.com/danggro/multi-container-deploy-test/commit/86a3a7df1ceedb7f3809feeb9e35dd91b3d5bcfa))
+
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
 ## [](https://github.com/danggro/multi-container-deploy-test/compare/v0.1.15...v) (2024-01-02)
 
 
