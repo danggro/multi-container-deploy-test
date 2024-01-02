@@ -44,6 +44,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: "Automated Version Bump"
+        id: version-bump
+        uses: "phips28/gh-action-bump-version@master"
+        run: cd backend
+        with:
+          tag-prefix: "v"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       # - name: Bump version and push tag
       #   uses: anothrNick/github-tag-action@1.64.0
       #   id: bump
