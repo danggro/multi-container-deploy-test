@@ -11,6 +11,8 @@ jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
@@ -35,23 +37,22 @@ jobs:
       # - name: Build MCDT Nginx Image
       #   run: docker build ./nginx -t danggro/mcdt-nginx:latest
 
-      # - name: "Automated Version Bump"
-      #   uses: "phips28/gh-action-bump-version@master"
-
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     PACKAGEJSON_DIR: "frontend"
-      #   with:
-      #     tag-prefix: "v"
-      #     skip-push: "true"
-
-      - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.64.0
+      - name: "Automated Version Bump"
+        uses: "phips28/gh-action-bump-version@master"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: true
-          DEFAULT_BUMP: "#patch"
-          REPO_OWNER: danggro
+          PACKAGEJSON_DIR: "frontend"
+        with:
+          tag-prefix: "v"
+          skip-push: "true"
+
+      # - name: Bump version and push tag
+      #   uses: anothrNick/github-tag-action@1.64.0
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     WITH_V: true
+      #     DEFAULT_BUMP: "#patch"
+      #     REPO_OWNER: danggro
 
       # - name: Push MCDT Frontend Image
       #   run: docker push danggro/multi-container-deploy-test-frontend:latest
