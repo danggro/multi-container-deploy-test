@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/danggro/multi-container-deploy-test/compare/v0.0.1...v1.0.1) (2024-01-02)
+
+
+### Bug Fixes
+
+* **test:** edit test-2(6) ([a71c108](https://github.com/danggro/multi-container-deploy-test/commit/a71c108ea4de85e155f32f4a86adf783d3ca287d))
+* **test:** edit test(6) ([a4bca72](https://github.com/danggro/multi-container-deploy-test/commit/a4bca7253be44c492f9b42144dbedcaf23510afb))
+
 ### [0.0.1](https://github.com/danggro/multi-container-deploy-test/compare/v0.1.15...v0.0.1) (2024-01-02)
 
 
