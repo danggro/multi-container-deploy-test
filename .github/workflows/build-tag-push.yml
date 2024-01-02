@@ -37,10 +37,13 @@ jobs:
 
       - name: "Automated Version Bump"
         uses: "phips28/gh-action-bump-version@master"
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PACKAGEJSON_DIR: "frontend"
-
+        with:
+          tag-prefix: "v"
+          skip-push: "true"
       # - name: Bump version and push tag
       #   uses: anothrNick/github-tag-action@1.64.0
       #   id: bump
