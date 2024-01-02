@@ -44,7 +44,6 @@ jobs:
           PACKAGEJSON_DIR: "frontend"
         with:
           tag-prefix: "v"
-          skip-push: "true"
 
       # - name: Bump version and push tag
       #   uses: anothrNick/github-tag-action@1.64.0
