@@ -56,15 +56,16 @@ jobs:
           npm version $NEW_TAG
           cd ../backend
           npm version $NEW_TAG
-          git commit -am "Update to $NEW_TAG"
-          git push -f origin main
-      # - name: Bump version and push tag
-      #   uses: anothrNick/github-tag-action@1.64.0
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     WITH_V: true
-      #     DEFAULT_BUMP: "#patch"
-      #     REPO_OWNER: danggro
+      # git commit -am "Update to $NEW_TAG"
+      # git push -f origin main
+
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.64.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: "#patch"
+          REPO_OWNER: danggro
 
       # - name: Push MCDT Frontend Image
       #   run: docker push danggro/multi-container-deploy-test-frontend:latest
