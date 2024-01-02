@@ -55,6 +55,8 @@ jobs:
           cd frontend
           npm version 0.0.1
           git checkout -b 0.0.1
+          git config --global user.email "anangdwin55@gmail.com"
+          git config --global user.name "danggro"
           git commit -am "Update to 0.0.1 (2)"
           git push origin 0.0.1 -f
 
