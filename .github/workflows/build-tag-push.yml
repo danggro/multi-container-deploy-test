@@ -50,7 +50,7 @@ jobs:
 
       - name: bump npm version
         env:
-          NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
+          NEW_TAG: ${{ steps.bump.outputs.newTag }}
         run: |
           cd frontend
           npm version $NEW_TAG
