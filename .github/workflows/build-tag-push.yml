@@ -15,7 +15,11 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
         with:
-          sparse-checkout: ./frontend
+          sparse-checkout: |
+            .github
+            frontend
+            backend
+
       # - name: Log in to Docker Hub
       #   uses: docker/login-action@v3
       #   with:
@@ -31,14 +35,6 @@ jobs:
       # - name: Build MCDT Nginx Image
       #   run: docker build ./nginx -t danggro/mcdt-nginx:latest
 
-      - name: "Automated Version Bump"
-        id: bump
-        uses: "phips28/gh-action-bump-version@master"
-        with:
-          tag-prefix: "v"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       # - name: Bump version and push tag
       #   uses: anothrNick/github-tag-action@1.64.0
       #   id: bump
@@ -48,10 +44,15 @@ jobs:
       #     DEFAULT_BUMP: "#patch"
       #     REPO_OWNER: danggro
 
-      - name: echo
-        env:
-          NEW_TAG: ${{ steps.bump.outputs }}
-        run: echo $NEW_TAG
+      - name: cat frontend
+        run: |
+          cd frontend
+          cat ./package.json
+
+      - name: cat backend
+        run: |
+          cd frontend
+          cat ./package.json
       # - name: Push MCDT Frontend Image
       #   run: docker push danggro/multi-container-deploy-test-frontend:latest
 
