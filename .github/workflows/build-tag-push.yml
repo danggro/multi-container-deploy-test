@@ -41,7 +41,7 @@ jobs:
 
       - name: echo
         env:
-          NEW_TAG: ${{ steps.bump }}
+          NEW_TAG: ${{ steps.bump.outputs }}
         run: echo $NEW_TAG
       # - name: Push MCDT Frontend Image
       #   run: docker push danggro/multi-container-deploy-test-frontend:latest
