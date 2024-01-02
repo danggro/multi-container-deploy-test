@@ -34,20 +34,14 @@ jobs:
 
       # - name: Build MCDT Nginx Image
       #   run: docker build ./nginx -t danggro/mcdt-nginx:latest
+      - name: cat frontend
+        run: |
+          cd frontend
+          cat ./package.json
 
       - name: "Automated Version Bump"
         id: version-bump
         uses: "phips28/gh-action-bump-version@master"
-        run: cd frontend
-        with:
-          tag-prefix: "v"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: "Automated Version Bump"
-        id: version-bump
-        uses: "phips28/gh-action-bump-version@master"
-        run: cd backend
         with:
           tag-prefix: "v"
         env:
@@ -61,11 +55,6 @@ jobs:
       #     WITH_V: true
       #     DEFAULT_BUMP: "#patch"
       #     REPO_OWNER: danggro
-
-      - name: cat frontend
-        run: |
-          cd frontend
-          cat ./package.json
 
       - name: cat backend
         run: |
